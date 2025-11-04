@@ -32,23 +32,22 @@
       align-items: center;
     }
 
-    /* ✅ Floating Brainrot Background */
+    /* ✅ Cozy Floating Particles */
     .particle {
       position: absolute;
-      width: 70px;
-      height: 70px;
-      background-image: url('brainrot-67.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.15;
-      animation: float 12s infinite ease-in-out;
+      width: 6px;
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      animation: floatParticle 10s infinite ease-in-out;
       z-index: 0;
+      filter: blur(1px);
     }
 
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
-      50% { transform: translateY(-30px) rotate(10deg); opacity: 0.25; }
-      100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+    @keyframes floatParticle {
+      0% { transform: translateY(0) scale(1); opacity: 0.5; }
+      50% { transform: translateY(-40px) scale(1.2); opacity: 0.8; }
+      100% { transform: translateY(0) scale(1); opacity: 0.5; }
     }
 
     /* ✅ Main Container */
@@ -137,11 +136,13 @@
   </style>
 </head>
 <body>
-  <!-- ✅ Floating Brainrots -->
+  <!-- ✅ Cozy Particles -->
   <div class="particle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
-  <div class="particle" style="top: 50%; left: 70%; animation-delay: 2s;"></div>
-  <div class="particle" style="top: 80%; left: 30%; animation-delay: 4s;"></div>
-  <div class="particle" style="top: 40%; left: 80%; animation-delay: 6s;"></div>
+  <div class="particle" style="top: 30%; left: 70%; animation-delay: 2s;"></div>
+  <div class="particle" style="top: 80%; left: 40%; animation-delay: 3s;"></div>
+  <div class="particle" style="top: 50%; left: 85%; animation-delay: 5s;"></div>
+  <div class="particle" style="top: 70%; left: 20%; animation-delay: 6s;"></div>
+  <div class="particle" style="top: 40%; left: 50%; animation-delay: 8s;"></div>
 
   <!-- ✅ Main Content -->
   <div class="container">
