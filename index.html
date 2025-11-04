@@ -8,9 +8,10 @@
   <!-- ✅ Google Site Verification -->
   <meta name="google-site-verification" content="ZSfB4CanGQmN9XWfBN_pGoXNCk7l8q_2mgH2MvroJnU" />
 
-  <meta name="description" content="Official Brainrot Supply — buy exclusive Brainrots and Plants from the Roblox game Plants vs Brainrots! Limited stock, verified sellers, fast delivery." />
-  <meta name="keywords" content="Brainrot Supply, Plants vs Brainrots, Roblox, brainrots, brainrot trading, plants vs brainrots shop, buy brainrots, premium brainrots, rebirth brainrots, king limone plant, shroombino plant, mango plant, roblox brainrot market, brainrot stock, brainrot supply store" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="description" content="Official Brainrot Supply — get exclusive Brainrots from the Roblox game Plants vs Brainrots! Buy, trade and collect limited Brainrots including 67 Brainrot, Lemowzio II, Premium Brainrots and more." />
+  <meta name="keywords" content="Brainrot Supply, Plants vs Brainrots, Roblox, brainrots, brainrot supply shop, buy brainrot, brainrot 67, Lemowzio II, premium brainrots, rebirth brainrot, king limone plant, mango plant, shroombino plant, plants vs brainrots trading, PvB shop" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <style>
     * {
@@ -21,20 +22,39 @@
     }
 
     body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f0f1a, #1a1a2f);
+      height: 100vh;
+      background: radial-gradient(ellipse at bottom, #0e0e1a 0%, #08080f 100%);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       color: white;
-      overflow-x: hidden;
+    }
+
+    /* 🔥 Floating Brainrot Particles */
+    .particle {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      background-image: url('https://static.wikia.nocookie.net/roblox/images/2/29/Brainrot67.png'); /* stylizowany brainrot 67 */
+      background-size: cover;
+      opacity: 0.25;
+      animation: float 12s infinite ease-in-out;
+      filter: drop-shadow(0 0 20px #00ff9d);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+      50% { transform: translateY(-40px) rotate(10deg); opacity: 0.7; }
+      100% { transform: translateY(0) rotate(-10deg); opacity: 0.3; }
     }
 
     .container {
       text-align: center;
       animation: fadeIn 1.5s ease-in-out;
-      padding: 2rem;
+      z-index: 2;
+      position: relative;
     }
 
     h1 {
@@ -70,141 +90,96 @@
       box-shadow: 0 0 35px rgba(0, 255, 200, 0.9);
     }
 
-    h2 {
+    .stock {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 25px;
       margin-top: 3rem;
-      font-size: 2rem;
-      background: linear-gradient(90deg, #00ffcc, #66ff99);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    table {
-      margin-top: 1.5rem;
-      border-collapse: collapse;
       width: 90%;
       max-width: 800px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(0, 255, 200, 0.1);
+      box-shadow: 0 0 25px rgba(0,255,150,0.1);
+      z-index: 2;
+      position: relative;
     }
 
-    th, td {
-      padding: 1rem;
-      text-align: center;
+    .stock h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #00ffaa;
+      text-shadow: 0 0 10px rgba(0,255,170,0.6);
     }
 
-    th {
-      background: rgba(0, 255, 200, 0.1);
-      color: #00ffcc;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
-
-    tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    td {
-      font-size: 1rem;
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       color: #ddd;
     }
 
+    .item:last-child {
+      border-bottom: none;
+    }
+
     .buy-btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #00ffcc, #00aaff);
+      background: linear-gradient(90deg, #00ff99, #00d4ff);
       color: #111;
-      text-decoration: none;
-      padding: 0.5rem 1.2rem;
-      font-size: 0.9rem;
-      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      border-radius: 12px;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      transition: 0.2s ease;
     }
 
     .buy-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
-    }
-
-    footer {
-      margin-top: 3rem;
-      font-size: 0.8rem;
-      color: #666;
-      text-align: center;
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00ffd0;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.8rem;
+      color: #666;
+    }
   </style>
 </head>
 <body>
+  <!-- 🔹 Floating Brainrot Particles -->
+  <script>
+    for (let i = 0; i < 12; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.top = Math.random() * 100 + 'vh';
+      p.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(p);
+    }
+  </script>
+
   <div class="container">
     <h1>Brainrot Supply</h1>
-    <p>The official hub for <strong>Plants vs Brainrots</strong> — buy exclusive Brainrots, Plants, and limited collectibles. Trusted by the Roblox community.</p>
+    <p>The official hub for <strong>Plants vs Brainrots</strong> — get exclusive Brainrots, unlock limited drops, and join our Roblox trading community.</p>
     <a href="https://discord.gg/krCMGztta3" target="_blank" class="button">💬 Join the Discord</a>
 
-    <h2>🧠 In Stock</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Stock</th>
-          <th>Price</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>67 Brainrots (87k/s – 145k/s)</td>
-          <td>8</td>
-          <td>$3</td>
-          <td><a href="https://discord.gg/krCMGztta3" target="_blank" class="buy-btn">Buy Now</a></td>
-        </tr>
-        <tr>
-          <td>Lemowzio II (1M/s)</td>
-          <td>2</td>
-          <td>$10</td>
-          <td><a href="https://discord.gg/krCMGztta3" target="_blank" class="buy-btn">Buy Now</a></td>
-        </tr>
-        <tr>
-          <td>All Rebirth Brainrots (open ticket on Discord)</td>
-          <td>999+</td>
-          <td>$0.99</td>
-          <td><a href="https://discord.gg/krCMGztta3" target="_blank" class="buy-btn">Buy Now</a></td>
-        </tr>
-        <tr>
-          <td>Premium Brainrots (200k/s – 548k/s)</td>
-          <td>30</td>
-          <td>$5</td>
-          <td><a href="https://discord.gg/krCMGztta3" target="_blank" class="buy-btn">Buy Now</a></td>
-        </tr>
-        <tr>
-          <td>King Limone Plant (1kg / 5kg)</td>
-          <td>10</td>
-          <td>$2.99</td>
-          <td><a href="https://discord.gg/krCMGztta3" target="_blank" class="buy-btn">Buy Now</a></td>
-        </tr>
-        <tr>
-          <td>Mango Plant (1kg / 9kg)</td>
-          <td>15</td>
-          <td>$1.99</td>
-          <td><a href="https://discord.gg/krCMGztta3" target="_blank" class="buy-btn">Buy Now</a></td>
-        </tr>
-        <tr>
-          <td>Shroombino Plant (1kg / 4kg)</td>
-          <td>35</td>
-          <td>$0.99</td>
-          <td><a href="https://discord.gg/krCMGztta3" target="_blank" class="buy-btn">Buy Now</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="stock">
+      <h2>🧠 Current Stock</h2>
+
+      <div class="item"><span>67 Brainrots (87k/s - 145k/s)</span><span>8 left — 3$ <a href="#" class="buy-btn">Buy Now</a></span></div>
+      <div class="item"><span>Lemowzio II (1M/s)</span><span>2 left — 10$ <a href="#" class="buy-btn">Buy Now</a></span></div>
+      <div class="item"><span>All Rebirth Brainrots</span><span>999+ — 0.99$ <a href="#" class="buy-btn">Buy Now</a></span></div>
+      <div class="item"><span>Premium Brainrots (200k/s - 548k/s)</span><span>30 — 5$ <a href="#" class="buy-btn">Buy Now</a></span></div>
+      <div class="item"><span>King Limone Plant (1kg / 5kg)</span><span>10 — 2.99$ <a href="#" class="buy-btn">Buy Now</a></span></div>
+      <div class="item"><span>Mango Plant (1kg / 9kg)</span><span>15 — 1.99$ <a href="#" class="buy-btn">Buy Now</a></span></div>
+      <div class="item"><span>Shroombino Plant (1kg / 4kg)</span><span>35 — 0.99$ <a href="#" class="buy-btn">Buy Now</a></span></div>
+    </div>
   </div>
 
-  <footer>
-    © 2025 Brainrot Supply — part of the Plants vs Brainrots universe
-  </footer>
+  <footer>© 2025 Brainrot Supply — part of the Plants vs Brainrots universe</footer>
 </body>
 </html>
