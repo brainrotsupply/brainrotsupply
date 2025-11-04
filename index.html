@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brainrot Supply | Plants vs Brainrots</title>
 
-  <!-- ✅ Google Site Verification -->
-  <meta name="google-site-verification" content="ZSfB4CanGQmN9XWfBN_pGoXNCk7l8q_2mgH2MvroJnU" />
+  <!-- ✅ SEO & Verification -->
+  <meta name="google-site-verification" content="IaRfQdOVRsU29Z_CBIfJHPUkru4uHxvJVa7lVGRbIzo" />
+  <meta name="description" content="Official Brainrot Supply — buy and collect Brainrots from the Roblox hit Plants vs Brainrots. Stock updates, prices, and exclusive drops available now!" />
+  <meta name="keywords" content="Brainrot Supply, Plants vs Brainrots, Roblox Brainrot shop, brainrots stock, brainrot trading, buy brainrot, brainrot marketplace, PvB, brainrot 67, lemowzio, rebirth brainrot, premium brainrots, king limone, mango plant, shroombino plant" />
 
-  <meta name="description" content="Official Brainrot Supply — get exclusive Brainrots from the Roblox game Plants vs Brainrots! Buy, trade and collect limited Brainrots including 67 Brainrot, Lemowzio II, Premium Brainrots and more." />
-  <meta name="keywords" content="Brainrot Supply, Plants vs Brainrots, Roblox, brainrots, brainrot supply shop, buy brainrot, brainrot 67, Lemowzio II, premium brainrots, rebirth brainrot, king limone plant, mango plant, shroombino plant, plants vs brainrots trading, PvB shop" />
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
   <style>
     * {
@@ -23,42 +22,44 @@
 
     body {
       height: 100vh;
-      background: radial-gradient(ellipse at bottom, #0e0e1a 0%, #08080f 100%);
-      overflow: hidden;
+      background: radial-gradient(circle at bottom, #0e0e19, #08080f);
+      color: white;
+      overflow-x: hidden;
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
     }
 
-    /* 🔥 Floating Brainrot Particles */
+    /* ✅ Floating Brainrot Background */
     .particle {
       position: absolute;
-      width: 64px;
-      height: 64px;
-      background-image: url('https://static.wikia.nocookie.net/roblox/images/2/29/Brainrot67.png'); /* stylizowany brainrot 67 */
-      background-size: cover;
-      opacity: 0.25;
+      width: 70px;
+      height: 70px;
+      background-image: url('brainrot-67.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.15;
       animation: float 12s infinite ease-in-out;
-      filter: drop-shadow(0 0 20px #00ff9d);
+      z-index: 0;
     }
 
     @keyframes float {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-      50% { transform: translateY(-40px) rotate(10deg); opacity: 0.7; }
-      100% { transform: translateY(0) rotate(-10deg); opacity: 0.3; }
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+      50% { transform: translateY(-30px) rotate(10deg); opacity: 0.25; }
+      100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
     }
 
+    /* ✅ Main Container */
     .container {
       text-align: center;
       animation: fadeIn 1.5s ease-in-out;
       z-index: 2;
-      position: relative;
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
       background: linear-gradient(90deg, #8ef17c, #00ffb3);
       -webkit-background-clip: text;
@@ -90,96 +91,119 @@
       box-shadow: 0 0 35px rgba(0, 255, 200, 0.9);
     }
 
-    .stock {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 25px;
-      margin-top: 3rem;
+    /* ✅ Table */
+    table {
       width: 90%;
       max-width: 800px;
-      box-shadow: 0 0 25px rgba(0,255,150,0.1);
+      border-collapse: collapse;
+      margin-top: 2rem;
       z-index: 2;
-      position: relative;
     }
 
-    .stock h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #00ffaa;
-      text-shadow: 0 0 10px rgba(0,255,170,0.6);
+    th, td {
+      border: 1px solid #333;
+      padding: 12px;
+      text-align: center;
     }
 
-    .item {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      color: #ddd;
+    th {
+      background-color: rgba(0, 255, 160, 0.1);
+      color: #00ffc3;
+      font-size: 1rem;
     }
 
-    .item:last-child {
-      border-bottom: none;
+    td {
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
-    .buy-btn {
-      background: linear-gradient(90deg, #00ff99, #00d4ff);
-      color: #111;
-      padding: 0.4rem 1rem;
-      border-radius: 12px;
-      font-weight: 600;
+    td a {
       text-decoration: none;
-      transition: 0.2s ease;
+      color: #00ffcc;
+      font-weight: 600;
     }
 
-    .buy-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px #00ffd0;
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #666;
+      text-align: center;
+      z-index: 2;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    footer {
-      position: absolute;
-      bottom: 15px;
-      font-size: 0.8rem;
-      color: #666;
-    }
   </style>
 </head>
 <body>
-  <!-- 🔹 Floating Brainrot Particles -->
-  <script>
-    for (let i = 0; i < 12; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      p.style.left = Math.random() * 100 + 'vw';
-      p.style.top = Math.random() * 100 + 'vh';
-      p.style.animationDelay = Math.random() * 5 + 's';
-      document.body.appendChild(p);
-    }
-  </script>
+  <!-- ✅ Floating Brainrots -->
+  <div class="particle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+  <div class="particle" style="top: 50%; left: 70%; animation-delay: 2s;"></div>
+  <div class="particle" style="top: 80%; left: 30%; animation-delay: 4s;"></div>
+  <div class="particle" style="top: 40%; left: 80%; animation-delay: 6s;"></div>
 
+  <!-- ✅ Main Content -->
   <div class="container">
     <h1>Brainrot Supply</h1>
-    <p>The official hub for <strong>Plants vs Brainrots</strong> — get exclusive Brainrots, unlock limited drops, and join our Roblox trading community.</p>
+    <p>The official marketplace for <strong>Plants vs Brainrots</strong> — buy, trade, and collect exclusive Brainrots available in stock now.</p>
+
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Stock</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>67 Brainrots (87k/s to 145k/s)</td>
+        <td>8</td>
+        <td>$3</td>
+        <td><a href="https://discord.gg/krCMGztta3" target="_blank">Buy Now</a></td>
+      </tr>
+      <tr>
+        <td>Lemowzio II (1mln/s)</td>
+        <td>2</td>
+        <td>$10</td>
+        <td><a href="https://discord.gg/krCMGztta3" target="_blank">Buy Now</a></td>
+      </tr>
+      <tr>
+        <td>All Rebirth Brainrots (open ticket on Discord)</td>
+        <td>999+</td>
+        <td>$0.99</td>
+        <td><a href="https://discord.gg/krCMGztta3" target="_blank">Buy Now</a></td>
+      </tr>
+      <tr>
+        <td>Premium Brainrots (200k/s to 548k/s)</td>
+        <td>30</td>
+        <td>$5</td>
+        <td><a href="https://discord.gg/krCMGztta3" target="_blank">Buy Now</a></td>
+      </tr>
+      <tr>
+        <td>King Limone Plant (1kg / 5kg)</td>
+        <td>10</td>
+        <td>$2.99</td>
+        <td><a href="https://discord.gg/krCMGztta3" target="_blank">Buy Now</a></td>
+      </tr>
+      <tr>
+        <td>Mango Plant (1kg / 9kg)</td>
+        <td>15</td>
+        <td>$1.99</td>
+        <td><a href="https://discord.gg/krCMGztta3" target="_blank">Buy Now</a></td>
+      </tr>
+      <tr>
+        <td>Shroombino Plant (1kg / 4kg)</td>
+        <td>35</td>
+        <td>$0.99</td>
+        <td><a href="https://discord.gg/krCMGztta3" target="_blank">Buy Now</a></td>
+      </tr>
+    </table>
+
     <a href="https://discord.gg/krCMGztta3" target="_blank" class="button">💬 Join the Discord</a>
-
-    <div class="stock">
-      <h2>🧠 Current Stock</h2>
-
-      <div class="item"><span>67 Brainrots (87k/s - 145k/s)</span><span>8 left — 3$ <a href="#" class="buy-btn">Buy Now</a></span></div>
-      <div class="item"><span>Lemowzio II (1M/s)</span><span>2 left — 10$ <a href="#" class="buy-btn">Buy Now</a></span></div>
-      <div class="item"><span>All Rebirth Brainrots</span><span>999+ — 0.99$ <a href="#" class="buy-btn">Buy Now</a></span></div>
-      <div class="item"><span>Premium Brainrots (200k/s - 548k/s)</span><span>30 — 5$ <a href="#" class="buy-btn">Buy Now</a></span></div>
-      <div class="item"><span>King Limone Plant (1kg / 5kg)</span><span>10 — 2.99$ <a href="#" class="buy-btn">Buy Now</a></span></div>
-      <div class="item"><span>Mango Plant (1kg / 9kg)</span><span>15 — 1.99$ <a href="#" class="buy-btn">Buy Now</a></span></div>
-      <div class="item"><span>Shroombino Plant (1kg / 4kg)</span><span>35 — 0.99$ <a href="#" class="buy-btn">Buy Now</a></span></div>
-    </div>
   </div>
 
-  <footer>© 2025 Brainrot Supply — part of the Plants vs Brainrots universe</footer>
+  <footer>
+    © 2025 Brainrot Supply — part of the Plants vs Brainrots universe
+  </footer>
 </body>
 </html>
