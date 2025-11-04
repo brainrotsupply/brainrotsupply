@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dołącz na Discorda!</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1e1e2f, #2b2b44);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #7289da, #99aaff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      color: #bbb;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    a.button {
+      display: inline-block;
+      background: linear-gradient(90deg, #5865f2, #4752c4);
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      border-radius: 999px;
+      box-shadow: 0 0 20px rgba(88, 101, 242, 0.6);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    a.button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 35px rgba(88, 101, 242, 0.9);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dołącz do naszej społeczności!</h1>
+    <p>Kliknij poniżej, aby wejść na naszego Discorda 👇</p>
+    <a href="https://discord.gg/krCMGztta3" target="_blank" class="button">💬 Dołącz na Discord</a>
+  </div>
+
+  <footer>
+    © 2025 Twoja Społeczność — powered by Vercel
+  </footer>
+</body>
+</html>
